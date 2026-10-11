@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-icon">⌘</span>
+            <div>
+                <h1>DSA Visualizer</h1>
+                <p>Learn algorithms visually</p>
+            </div>
+        </div>
+        <span class="status"><span class="dot"></span> Interactive Learning</span>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p class="eyebrow">YOUR ALGORITHM PLAYGROUND</p>
+            <h2>Sorting Algorithms</h2>
+            <p>Watch Bubble Sort compare, swap, and sort elements step by step.</p>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <span class="eyebrow">ALGORITHM</span>
+                    <h3>Bubble Sort</h3>
+                </div>
+                <span class="tag">O(n²) time</span>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="size">Array size: <span id="sizeValue">30</span></label>
+                    <input id="size" type="range" min="5" max="70" value="30" />
+                </div>
+                <div class="control-group">
+                    <label for="speed">Speed</label>
+                    <input id="speed" type="range" min="1" max="10" value="5" />
+                    <div class="range-labels"><span>Slow</span><span>Fast</span></div>
+                </div>
+                <button id="generateBtn" class="button secondary">↻ New Array</button>
+                <button id="startBtn" class="button primary">▶ Start Sort</button>
+                <button id="pauseBtn" class="button secondary" disabled>Ⅱ Pause</button>
+                <button id="resetBtn" class="button secondary">Reset</button>
+            </div>
+
+            <div class="legend">
+                <span><i class="legend-dot normal"></i> Unsorted</span>
+                <span><i class="legend-dot compare"></i> Comparing</span>
+                <span><i class="legend-dot swap"></i> Swapping</span>
+                <span><i class="legend-dot sorted"></i> Sorted</span>
+            </div>
+
+            <div id="bars" class="bars" aria-label="Array visualization"></div>
+
+            <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-label">Comparisons</span>
+                    <strong id="comparisons">0</strong>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Swaps</span>
+                    <strong id="swaps">0</strong>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Array status</span>
+                    <strong id="arrayStatus">Ready</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-grid">
+            <article class="info-card">
+                <span class="eyebrow">HOW IT WORKS</span>
+                <h3>Compare adjacent elements</h3>
+                <p id="explanation" aria-live="polite">
+                    Press Start Sort to begin. Larger values move toward the right
+                    after each pass.
+                </p>
+            </article>
+            <article class="info-card">
+                <span class="eyebrow">COMPLEXITY</span>
+                <h3>Time and space</h3>
+                <p>Average time: <strong>O(n²)</strong></p>
+                <p>Worst-case time: <strong>O(n²)</strong></p>
+                <p>Auxiliary space: <strong>O(1)</strong></p>
+            </article>
+        </section>
+
+        <footer>Built for learning · DSA Algorithm Visualizer</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
