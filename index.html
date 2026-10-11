@@ -36,6 +36,32 @@
                 <span class="tag">O(n²) time</span>
             </div>
 
+            <div class="algorithm-tabs">
+                <button class="algorithm-tab active" data-algorithm="bubble">
+                    Bubble Sort
+                </button>
+                <button class="algorithm-tab" data-algorithm="selection">
+                    Selection Sort
+                </button>
+                <button class="algorithm-tab" data-algorithm="insertion">
+                    Insertion Sort
+                </button>
+                <button class="algorithm-tab" data-algorithm="merge">
+                    Merge Sort
+                </button>
+
+                <button class="algorithm-tab" data-algorithm="quick">
+                    Quick Sort
+                </button>
+
+                <button id="compareBtn" class="compare-btn">
+                    Compare All Algorithms
+                </button>
+
+
+            </div>
+
+
             <div class="controls">
                 <div class="control-group">
                     <label for="size">Array size: <span id="sizeValue">30</span></label>
@@ -60,6 +86,33 @@
             </div>
 
             <div id="bars" class="bars" aria-label="Array visualization"></div>
+
+            <div class="complexity-panel">
+                <h3>Algorithm Complexity</h3>
+
+                <div class="complexity-grid">
+                    <div class="complexity-card">
+                        <span>Best Time</span>
+                        <strong id="bestTime">O(n)</strong>
+                    </div>
+
+                    <div class="complexity-card">
+                        <span>Average Time</span>
+                        <strong id="averageTime">O(n²)</strong>
+                    </div>
+
+                    <div class="complexity-card">
+                        <span>Worst Time</span>
+                        <strong id="worstTime">O(n²)</strong>
+                    </div>
+
+                    <div class="complexity-card">
+                        <span>Space</span>
+                        <strong id="spaceComplexity">O(1)</strong>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="progress-track">
                 <div id="progressBar" class="progress-bar"></div>
@@ -101,6 +154,38 @@
 
         <footer>Built for learning · DSA Algorithm Visualizer</footer>
     </main>
+
+    <section id="comparisonPanel" class="comparison-panel" hidden>
+        <h2>Algorithm Comparison</h2>
+        <p>All five algorithms use the same starting array.</p>
+
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time (ms)</th>
+                        <th>Comparisons</th>
+                        <th>Moves / Swaps</th>
+                        <th>Sorted Correctly</th>
+                    </tr>
+                </thead>
+                <tbody id="comparisonResults"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="comparison-panel">
+        <h2>Performance Charts</h2>
+
+        <h3>Element Comparisons</h3>
+        <canvas id="comparisonsChart" height="120"></canvas>
+
+        <h3>Moves / Swaps</h3>
+        <canvas id="movesChart" height="120"></canvas>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="script.js"></script>
 </body>
